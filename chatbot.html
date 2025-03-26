@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1>Personal Chatbot</h1>
+    <div id="chat-container">
+        <div id="chat-messages"></div>
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script>
+        function sendMessage() {
+            const userInput = document.getElementById('user-input').value;
+            const chatMessages = document.getElementById('chat-messages');
+            chatMessages.innerHTML += `<p>You: ${userInput}</p>`;
+            // 这里可以添加更复杂的聊天机器人回复逻辑
+            const response = "I received your message: " + userInput;
+            chatMessages.innerHTML += `<p>Chatbot: ${response}</p>`;
+            document.getElementById('user-input').value = '';
+        }
+    </script>
+</body>
+
+</html>    
